@@ -2,3 +2,4 @@ click
 loguru
 prometheus_client
 pyyaml
+PyInstaller
