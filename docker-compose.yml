@@ -8,6 +8,6 @@ services:
     ports:
       - 9333:9333
     environment:
-      - TAPO_EMAIL=YOUR@EMAIL.COM
-      - TAPO_PASSWORD=CHANGE_ME
-      - PORT=9333 # optional
+      - TAPO_USER_EMAIL=YOUR@EMAIL.COM
+      - TAPO_USER_PASSWORD=CHANGE_ME
+      - TAPO_PROMETHEUS_PORT=9333 # optional

@@ -104,8 +104,9 @@ class Collector:
                     d.handshake()
                     d.login()
                 except Exception as e:
+                    logger.error(e)
                     exception_count += 1
-                    logger.error("failed to connect to device", extra=extra, exc_info=True)
+                    logger.error("failed to connect to device", extra=extra, exc_info=e)
                     if exception_count >= 3:  # Return None after the third exception
                         d = None
                         break
@@ -143,7 +144,7 @@ class Collector:
             })
 
             try:
-                data = self.get_device_data(device, ip_addr, room)['result']
+                data = self.get_device_data(device, ip_addr, room)
 
                 labels = [ip_addr, room]
                 metrics[MetricType.TODAY_RUNTIME].add_metric(labels, data['today_runtime'])

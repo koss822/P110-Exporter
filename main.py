@@ -40,7 +40,7 @@ def start_monitoring(prometheus_port, collector):
     help="Password associated with TP-Link TAPO account."
 )
 @option(
-    '--prometheus-port', default=8080, help="port for prometheus metric exposition"
+    '--prometheus-port', envvar="TAPO_PROMETHEUS_PORT", default=8080, help="port for prometheus metric exposition"
 )
 def run(tapo_email, tapo_password, config_file, prometheus_port):
     with open(config_file, "r") as cfg:
