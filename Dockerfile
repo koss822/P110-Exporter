@@ -1,5 +1,5 @@
 FROM python:3.11-slim-bullseye AS builder
-RUN apt-get update; apt-get -y upgrade; apt-get clean; apt-get install binutils -y
+RUN apt-get update; apt-get -y upgrade; apt-get clean; apt-get install binutils git -y
 
 COPY . /app
 WORKDIR /app
