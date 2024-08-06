@@ -3,3 +3,5 @@ loguru
 prometheus_client
 pyyaml
 PyInstaller
+flask
+requests
